@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-blue: #0284c7; /* Professional restrained blue (sky-600) */
+  --color-brand-blue-hover: #0369a1; /* sky-700 */
+  --color-brand-blue-light: #e0f2fe; /* sky-100 */
+  --color-brand-blue-dark: #075985; /* sky-800 */
+  
+  --font-sans: var(--font-geist-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --animate-fade-in: fade-in 0.4s ease-out forwards;
+  --animate-fade-in-slide: fade-in-slide 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-in-slide {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Near-black slate-900 */
+  --muted: #475569; /* slate-600 */
+  --muted-background: #f8fafc; /* slate-50 */
+  --border: #e2e8f0; /* slate-200 */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --accent: #e0f2fe; /* sky-100 */
+  --accent-foreground: #0369a1; /* sky-700 */
+}
+
+/* Explicit class-based dark mode selector (used by next-themes) */
+.dark {
+  --background: #0b0f19; /* Academic near-black slate-blue */
+  --foreground: #f8fafc; /* Near-white slate-50 */
+  --muted: #94a3b8; /* slate-400 */
+  --muted-background: #111827; /* gray-900 */
+  --border: #1e293b; /* slate-800 */
+  --card: #0f172a; /* slate-900 */
+  --card-foreground: #f8fafc;
+  --accent: #0c4a6e; /* sky-900 */
+  --accent-foreground: #e0f2fe; /* sky-100 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-muted-background: var(--muted-background);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessible focus outline */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Respect prefers-reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-fade-in-slide,
+  .animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
