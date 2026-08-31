@@ -89,19 +89,22 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full border-t border-border bg-surface mt-auto">
+    <footer className="w-full border-t border-border bg-surface mt-auto relative">
+      {/* Top subtle brand accent border line */}
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-brand/30 to-transparent absolute top-0 left-0" />
+
       {/* Main Footer Content */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start">
           {/* Left Column: Profile Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative h-9 w-9 rounded-full border border-brand/20 overflow-hidden shrink-0 shadow-sm">
+              <div className="relative h-10 w-10 rounded-full ring-2 ring-brand/20 overflow-hidden shrink-0 shadow-xs">
                 <Image
                   src="/profile.jpg"
                   alt="Md Sayedul Islam"
-                  width={36}
-                  height={36}
+                  width={40}
+                  height={40}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -154,7 +157,7 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
               Connect
             </h4>
-            <nav className="flex flex-col gap-2.5">
+            <nav className="flex flex-col gap-2">
               {connectLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -163,12 +166,12 @@ export function Footer() {
                     href={link.href}
                     target={link.name !== "Email Me" && link.name !== "Phone / WhatsApp" ? "_blank" : undefined}
                     rel={link.name !== "Email Me" && link.name !== "Phone / WhatsApp" ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-2.5 text-xs sm:text-sm text-secondary hover:text-brand transition-colors duration-200 group w-fit"
+                    className="inline-flex items-center gap-2.5 text-xs sm:text-sm text-secondary hover:text-brand transition-colors duration-200 group w-fit p-1 rounded-md hover:bg-brand-subtle/50"
                   >
                     <div className="flex h-7 w-7 items-center justify-center rounded border border-border bg-background group-hover:border-brand group-hover:text-brand transition-colors">
                       <Icon className="h-3.5 w-3.5" />
                     </div>
-                    <span>{link.name}</span>
+                    <span className="font-medium">{link.name}</span>
                   </a>
                 );
               })}
@@ -178,7 +181,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border bg-background/50">
+      <div className="border-t border-border bg-background/60">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-muted font-medium">
             &copy; {currentYear} {personalInfo.name}. All rights reserved.
@@ -192,7 +195,7 @@ export function Footer() {
             
             <button
               onClick={scrollToTop}
-              className="flex h-8 w-8 items-center justify-center rounded border border-border bg-background text-secondary hover:text-brand hover:border-brand hover:bg-brand-subtle transition-all duration-200 cursor-pointer shadow-none"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-background text-secondary hover:text-brand hover:border-brand hover:bg-brand-subtle transition-all duration-200 cursor-pointer shadow-none"
               aria-label="Scroll to top"
               title="Scroll to top"
             >
