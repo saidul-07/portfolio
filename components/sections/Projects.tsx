@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-28 border-b border-border scroll-mt-16">
+    <section id="projects" className="py-6 md:py-8 border-b border-border scroll-mt-16">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
         {/* Left Column: Heading and description */}
         <div className="md:col-span-4 space-y-4">
