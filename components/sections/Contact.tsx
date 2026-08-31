@@ -171,7 +171,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 md:py-28 border-b border-border scroll-mt-16 animate-fade-in"
+      className="py-10 md:py-16 border-b border-border scroll-mt-16 animate-fade-in"
     >
       <div className="space-y-10">
         {/* Section Header */}

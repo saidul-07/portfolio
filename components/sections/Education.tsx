@@ -3,7 +3,7 @@ import { educationList } from "@/data/education";
 
 export function Education() {
   return (
-    <section id="education" className="py-20 md:py-28 border-b border-border scroll-mt-16">
+    <section id="education" className="py-10 md:py-16 border-b border-border scroll-mt-16">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
         {/* Left Column */}
         <div className="md:col-span-4 space-y-4">
