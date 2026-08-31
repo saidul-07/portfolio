@@ -1,12 +1,12 @@
-import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink } from "lucide-react";
 import { personalInfo } from "@/data/personal";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -25,8 +25,8 @@ function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -71,23 +71,20 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24 scroll-mt-16">
-      {/* Header */}
-      <div className="flex flex-col gap-3 animate-fade-in">
-        <span className="text-xs font-semibold tracking-widest uppercase text-brand-blue dark:text-brand-blue-light">
-          Get In Touch
-        </span>
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          {"Let's Connect"}
-        </h2>
-        <p className="max-w-2xl text-muted text-base sm:text-lg">
-          Interested in connecting, discussing a project, or sharing ideas? Feel free to reach out.
-        </p>
-      </div>
+    <section id="contact" className="py-20 md:py-28 scroll-mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+        {/* Left Column */}
+        <div className="md:col-span-4 space-y-4">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground uppercase tracking-widest">
+            {"Let's Connect"}
+          </h2>
+          <p className="text-secondary text-sm leading-relaxed max-w-sm">
+            I am always open to discussing graduate studies, research collaborations, software development projects, or continuous learning opportunities. Feel free to reach out.
+          </p>
+        </div>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-        {/* Left Column: Direct Links (7/12 width) */}
-        <div className="md:col-span-7 space-y-4 w-full">
+        {/* Right Column: Contact Cards */}
+        <div className="md:col-span-8 space-y-4">
           {contactLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -96,45 +93,27 @@ export function Contact() {
                 href={link.href}
                 target={link.id !== "email" ? "_blank" : undefined}
                 rel={link.id !== "email" ? "noopener noreferrer" : undefined}
-                className="flex items-center justify-between p-5 rounded-lg border border-border bg-card shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-200 group cursor-pointer w-full text-left"
+                className="flex items-center justify-between p-4 rounded border border-border bg-surface hover:border-accent hover:-translate-y-0.5 transition-all duration-200 shadow-none group cursor-pointer w-full text-left"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-muted-background text-brand-blue dark:text-brand-blue-light transition-colors group-hover:bg-brand-blue/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded border border-border bg-background text-secondary group-hover:text-accent transition-colors duration-200">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-muted uppercase tracking-wider">
+                    <h3 className="text-[10px] font-bold uppercase tracking-wider text-muted">
                       {link.label}
                     </h3>
-                    <p className="text-base font-semibold text-foreground group-hover:text-brand-blue transition-colors mt-0.5 break-all">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-200 mt-0.5 break-all">
                       {link.displayValue}
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="h-4 w-4 text-muted group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                <ExternalLink className="h-4 w-4 text-muted group-hover:text-accent transition-all duration-200 shrink-0" />
               </a>
             );
           })}
-        </div>
-
-        {/* Right Column: Location Summary (5/12 width) */}
-        <div className="md:col-span-5 w-full">
-          <div className="rounded-lg border border-border bg-card p-6 md:p-8 shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-200 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-full -z-10" />
-            <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 border-b border-border pb-3">
-              <MapPin className="h-5 w-5 text-brand-blue" />
-              Current Location
-            </h3>
-            <div className="mt-4 space-y-2">
-              <p className="text-base font-semibold text-foreground">{personalInfo.location}</p>
-              <p className="text-sm text-muted leading-relaxed">
-                Dhaka University of Engineering &amp; Technology (DUET) Campus area, Gazipur.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
   );
 }
-

@@ -1,94 +1,82 @@
-import { Calendar, Award, MapPin } from "lucide-react";
+import { Calendar, MapPin, Award } from "lucide-react";
 import { educationList } from "@/data/education";
 
 export function Education() {
   return (
-    <section id="education" className="py-16 md:py-24 border-b border-border scroll-mt-16">
-      {/* Header */}
-      <div className="flex flex-col gap-3 animate-fade-in">
-        <span className="text-xs font-semibold tracking-widest uppercase text-brand-blue dark:text-brand-blue-light">
-          Timeline
-        </span>
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Education
-        </h2>
-        <p className="max-w-2xl text-muted text-base sm:text-lg">
-          My academic journey in computer science and technology.
-        </p>
-      </div>
+    <section id="education" className="py-20 md:py-28 border-b border-border scroll-mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+        {/* Left Column */}
+        <div className="md:col-span-4 space-y-4">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground uppercase tracking-widest">
+            Education
+          </h2>
+          <p className="text-secondary text-sm leading-relaxed max-w-sm">
+            My academic journey in computer science and technology.
+          </p>
+        </div>
 
-      {/* Timeline Wrapper */}
-      <div className="mt-12 relative border-l border-border pl-6 ml-4 space-y-12">
-        {educationList.map((entry) => {
-          return (
-            <div key={entry.id} className="relative group">
-              {/* Timeline dot marker */}
+        {/* Right Column: Timeline */}
+        <div className="md:col-span-8 relative border-l border-border pl-6 ml-3 space-y-10">
+          {educationList.map((entry) => (
+            <div key={entry.id} className="relative space-y-2">
+              {/* Timeline marker */}
               <span className={`absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border bg-background transition-colors duration-200 ${
-                entry.featured 
-                  ? "border-brand-blue ring-4 ring-brand-blue/10 bg-brand-blue" 
-                  : "border-border group-hover:border-brand-blue"
+                entry.featured
+                  ? "border-accent ring-4 ring-accent/10 bg-accent"
+                  : "border-border"
               }`}>
                 {entry.featured && <span className="h-1.5 w-1.5 rounded-full bg-background" />}
               </span>
 
-              {/* Education Card container */}
-              <div className={`rounded-lg border bg-card p-6 shadow-sm hover:shadow-md transition-all duration-200 max-w-3xl ${
-                entry.featured 
-                  ? "border-brand-blue/30 md:p-8" 
-                  : "border-border hover:border-brand-blue/30"
-              }`}>
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div className="space-y-2">
-                    {/* Status badge for current studies */}
-                    {entry.status && (
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-blue-light bg-brand-blue/5 border border-brand-blue/20 px-2 py-0.5 rounded">
-                        <span className="h-1.5 w-1.5 rounded-full bg-brand-blue animate-pulse" />
-                        {entry.status}
-                      </span>
-                    )}
-
-                    <h3 className={`font-bold text-foreground leading-tight ${
-                      entry.featured ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
-                    }`}>
-                      {entry.degree} {entry.fieldOfStudy && entry.id !== "duet" && `— ${entry.fieldOfStudy}`}
-                    </h3>
-
-                    <p className="text-muted text-base font-medium">
-                      {entry.institution}
-                    </p>
-
-                    {entry.location && (
-                      <div className="flex items-center gap-1.5 text-xs text-muted">
-                        <MapPin className="h-3.5 w-3.5" />
-                        <span>{entry.location}</span>
-                      </div>
-                    )}
-
-                    {/* Current Semester Detail */}
-                    {entry.currentDetails && (
-                      <p className="text-sm font-semibold text-brand-blue dark:text-brand-blue-light mt-2" dangerouslySetInnerHTML={{ __html: entry.currentDetails }} />
-                    )}
-                  </div>
-
-                  {/* Right side Metadata (Period & Grade) */}
-                  <div className="sm:text-right flex flex-col gap-2 shrink-0">
-                    <div className="flex items-center sm:justify-end gap-1.5 text-sm font-medium text-muted">
-                      <Calendar className="h-4 w-4" />
-                      <span>{entry.period}</span>
-                    </div>
-
-                    <div className="inline-flex items-center sm:justify-end gap-1.5 mt-1 text-muted font-medium">
-                      <Award className="h-4 w-4 shrink-0 text-brand-blue dark:text-brand-blue-light" />
-                      <span className="text-sm">
-                        CGPA: <strong className="text-foreground">{entry.grade}</strong>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              {/* Title & Status */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                <h3 className="text-base sm:text-lg font-bold text-foreground">
+                  {entry.degree} {entry.fieldOfStudy && entry.id !== "duet" && `— ${entry.fieldOfStudy}`}
+                </h3>
+                {entry.status && (
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-accent bg-accent-subtle px-1.5 py-0.5 rounded">
+                    <span className="h-1 w-1 rounded-full bg-accent animate-pulse" />
+                    {entry.status}
+                  </span>
+                )}
               </div>
+
+              {/* Institution & Location */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-secondary">
+                <span className="font-semibold">{entry.institution}</span>
+                {entry.location && (
+                  <>
+                    <span className="text-muted hidden sm:inline">&bull;</span>
+                    <span className="flex items-center gap-1 text-muted text-xs">
+                      <MapPin className="h-3.5 w-3.5" />
+                      {entry.location}
+                    </span>
+                  </>
+                )}
+              </div>
+
+              {/* Period & Grade */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted pt-1">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="h-3.5 w-3.5" />
+                  {entry.period}
+                </span>
+                <span className="flex items-center gap-1.5 font-medium text-secondary">
+                  <Award className="h-3.5 w-3.5 text-accent" />
+                  Grade: <strong className="text-foreground">{entry.grade}</strong>
+                </span>
+              </div>
+
+              {/* Current term details */}
+              {entry.currentDetails && (
+                <p
+                  className="text-xs font-semibold text-accent mt-1"
+                  dangerouslySetInnerHTML={{ __html: entry.currentDetails }}
+                />
+              )}
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

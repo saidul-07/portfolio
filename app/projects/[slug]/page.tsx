@@ -27,20 +27,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-8 animate-fade-in-slide">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-foreground transition-colors group cursor-pointer"
+        className="inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-foreground transition-colors group cursor-pointer"
       >
         <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
         Back to Home
       </Link>
 
       <div className="space-y-3">
-        <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-blue-light bg-brand-blue/5 border border-brand-blue/20 px-2 py-0.5 rounded">
+        <span className="inline-flex text-[10px] font-bold uppercase tracking-wider text-accent bg-accent-subtle px-1.5 py-0.5 rounded">
           {project.type}
         </span>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
           {project.title}
         </h1>
-        <p className="text-lg text-muted">
+        <p className="text-lg text-secondary">
           Integrated Mobile Application for DUET Services
         </p>
       </div>
@@ -48,7 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="border-t border-border pt-6 space-y-6">
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-foreground">Overview</h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-secondary leading-relaxed">
             {project.description}
           </p>
         </section>
@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="text-sm font-medium text-muted bg-muted-background border border-border px-3 py-1 rounded"
+                className="text-xs font-medium text-secondary bg-background border border-border px-2.5 py-1 rounded"
               >
                 {tech}
               </span>
@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors duration-200 cursor-pointer"
             >
               View Repository
               <ExternalLink className="h-4 w-4" />

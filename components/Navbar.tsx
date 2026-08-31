@@ -10,7 +10,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
@@ -22,9 +21,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo/Name */}
-        <Link href="/" className="font-semibold text-foreground hover:text-brand-blue transition-colors">
+        <Link href="/" className="font-semibold text-foreground hover:text-accent transition-colors duration-200">
           {personalInfo.name}
         </Link>
 
@@ -34,7 +33,7 @@ export function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+              className="text-sm font-medium text-secondary hover:text-foreground transition-colors duration-200"
             >
               {item.name}
             </a>
@@ -47,7 +46,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground hover:bg-muted-background transition-colors cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground hover:bg-surface transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -57,13 +56,13 @@ export function Navbar() {
 
       {/* Mobile Menu Panel */}
       {isOpen && (
-        <div className="md:hidden border-b border-border bg-background px-4 py-4 space-y-3">
+        <div className="md:hidden border-b border-border bg-background px-4 py-4 space-y-3 animate-fade-in">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-muted hover:text-foreground transition-colors"
+              className="block text-base font-medium text-secondary hover:text-foreground transition-colors duration-200"
             >
               {item.name}
             </a>
@@ -73,4 +72,3 @@ export function Navbar() {
     </header>
   );
 }
-

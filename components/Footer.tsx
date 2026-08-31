@@ -4,8 +4,8 @@ function GithubIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -24,8 +24,8 @@ function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -45,8 +45,8 @@ function MailIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -65,48 +65,48 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-border bg-muted-background py-8 mt-auto">
-      <div className="mx-auto max-w-5xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left sm:px-6 lg:px-8">
+    <footer className="w-full border-t border-border bg-background py-8 mt-auto">
+      <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left sm:px-6 lg:px-8">
         <div className="space-y-1">
           <h3 className="text-sm font-bold text-foreground">
             {personalInfo.name}
           </h3>
-          <p className="text-xs text-muted">
-            CSE Student &bull; Learning &bull; Building &bull; Exploring
+          <p className="text-xs text-secondary">
+            CSE Student &bull; DUET
           </p>
         </div>
 
         {/* Social Links */}
-        <div className="flex items-center gap-4 text-muted">
+        <div className="flex items-center gap-4 text-secondary">
           <a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-accent transition-colors duration-200 p-1"
             aria-label="GitHub"
           >
-            <GithubIcon className="h-4 w-4" />
+            <GithubIcon />
           </a>
           <a
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-accent transition-colors duration-200 p-1"
             aria-label="LinkedIn"
           >
-            <LinkedinIcon className="h-4 w-4" />
+            <LinkedinIcon />
           </a>
           <a
             href={`mailto:${personalInfo.email}`}
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-accent transition-colors duration-200 p-1"
             aria-label="Email"
           >
-            <MailIcon className="h-4 w-4" />
+            <MailIcon />
           </a>
         </div>
 
         <p className="text-xs text-muted sm:text-right">
-          &copy; {currentYear} {personalInfo.name}. All rights reserved.
+          &copy; {currentYear} {personalInfo.name}
         </p>
       </div>
     </footer>

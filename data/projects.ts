@@ -7,6 +7,7 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   featured: boolean;
+  status?: string;
 }
 
 export const projects: Project[] = [
@@ -17,7 +18,7 @@ export const projects: Project[] = [
     type: "Academic Project",
     technologies: ["Java", "SQLite", "Android"],
     githubUrl: "https://github.com/saidul-07/MyDUET-Android-App",
-    featured: true
+    featured: true,
+    status: "Completed"
   }
 ];
-

@@ -9,7 +9,7 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col w-full">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col w-full">
       {/* Hero Section */}
       <Hero />
 
