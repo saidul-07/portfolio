@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { personalInfo } from "@/data/personal";
 
 export function Hero() {
@@ -83,27 +84,22 @@ export function Hero() {
         {/* Right Column: Floating Profile Card */}
         <div className="lg:col-span-5 w-full">
           <div className="border border-border bg-surface p-6 rounded-md shadow-none flex flex-col items-center text-center space-y-4 max-w-sm mx-auto">
-            {/* Visual Photo Placeholder Frame */}
-            <div className="relative w-32 h-32 rounded-full border-2 border-brand/20 bg-brand-subtle flex items-center justify-center select-none mb-2">
-              <span className="text-3xl font-extrabold text-brand tracking-widest">SI</span>
-              
+            {/* Profile Photo + Badge */}
+            <div className="relative mb-2">
+              <div className="w-32 h-32 rounded-full border-2 border-brand/20 overflow-hidden">
+                <Image
+                  src="/profile.jpg"
+                  alt="Md Sayedul Islam"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
               {/* Verified Badge */}
-              <span className="absolute -bottom-1.5 inline-flex items-center gap-1 bg-brand text-white px-2 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase shadow-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-2.5 w-2.5"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                Verified Student
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 bg-brand text-white px-2 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase shadow-sm whitespace-nowrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="h-2.5 w-2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                {"Verified Student"}
               </span>
             </div>
 
