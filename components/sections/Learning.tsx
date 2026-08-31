@@ -44,7 +44,7 @@ export function Learning() {
               {learningList.map((item) => (
                 <div key={item.id} className="space-y-4">
                   <div className="space-y-2">
-                    <span className="inline-flex text-[10px] font-bold uppercase tracking-wider text-accent bg-accent-subtle px-1.5 py-0.5 rounded">
+                    <span className="inline-flex text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle px-1.5 py-0.5 rounded">
                       {item.status} Activity
                     </span>
                     <h4 className="text-lg font-bold text-foreground">

@@ -82,7 +82,7 @@ export function Footer() {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-accent transition-colors duration-200 p-1"
+            className="hover:text-brand transition-colors duration-200 p-1"
             aria-label="GitHub"
           >
             <GithubIcon />
@@ -91,14 +91,14 @@ export function Footer() {
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-accent transition-colors duration-200 p-1"
+            className="hover:text-brand transition-colors duration-200 p-1"
             aria-label="LinkedIn"
           >
             <LinkedinIcon />
           </a>
           <a
             href={`mailto:${personalInfo.email}`}
-            className="hover:text-accent transition-colors duration-200 p-1"
+            className="hover:text-brand transition-colors duration-200 p-1"
             aria-label="Email"
           >
             <MailIcon />

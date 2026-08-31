@@ -93,22 +93,22 @@ export function Contact() {
                 href={link.href}
                 target={link.id !== "email" ? "_blank" : undefined}
                 rel={link.id !== "email" ? "noopener noreferrer" : undefined}
-                className="flex items-center justify-between p-4 rounded border border-border bg-surface hover:border-accent hover:-translate-y-0.5 transition-all duration-200 shadow-none group cursor-pointer w-full text-left"
+                className="flex items-center justify-between p-4 rounded border border-border bg-surface hover:border-brand hover:-translate-y-0.5 transition-all duration-200 shadow-none group cursor-pointer w-full text-left"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded border border-border bg-background text-secondary group-hover:text-accent transition-colors duration-200">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded border border-border bg-background text-secondary group-hover:text-brand transition-colors duration-200">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-[10px] font-bold uppercase tracking-wider text-muted">
                       {link.label}
                     </h3>
-                    <p className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-200 mt-0.5 break-all">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-brand transition-colors duration-200 mt-0.5 break-all">
                       {link.displayValue}
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="h-4 w-4 text-muted group-hover:text-accent transition-all duration-200 shrink-0" />
+                <ExternalLink className="h-4 w-4 text-muted group-hover:text-brand transition-all duration-200 shrink-0" />
               </a>
             );
           })}

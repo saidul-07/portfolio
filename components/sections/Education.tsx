@@ -22,7 +22,7 @@ export function Education() {
               {/* Timeline marker */}
               <span className={`absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border bg-background transition-colors duration-200 ${
                 entry.featured
-                  ? "border-accent ring-4 ring-accent/10 bg-accent"
+                  ? "border-brand ring-4 ring-brand/10 bg-brand"
                   : "border-border"
               }`}>
                 {entry.featured && <span className="h-1.5 w-1.5 rounded-full bg-background" />}
@@ -34,8 +34,8 @@ export function Education() {
                   {entry.degree} {entry.fieldOfStudy && entry.id !== "duet" && `— ${entry.fieldOfStudy}`}
                 </h3>
                 {entry.status && (
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-accent bg-accent-subtle px-1.5 py-0.5 rounded">
-                    <span className="h-1 w-1 rounded-full bg-accent animate-pulse" />
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle px-1.5 py-0.5 rounded">
+                    <span className="h-1 w-1 rounded-full bg-brand animate-pulse" />
                     {entry.status}
                   </span>
                 )}
@@ -62,7 +62,7 @@ export function Education() {
                   {entry.period}
                 </span>
                 <span className="flex items-center gap-1.5 font-medium text-secondary">
-                  <Award className="h-3.5 w-3.5 text-accent" />
+                  <Award className="h-3.5 w-3.5 text-brand" />
                   Grade: <strong className="text-foreground">{entry.grade}</strong>
                 </span>
               </div>
@@ -70,7 +70,7 @@ export function Education() {
               {/* Current term details */}
               {entry.currentDetails && (
                 <p
-                  className="text-xs font-semibold text-accent mt-1"
+                  className="text-xs font-semibold text-brand mt-1"
                   dangerouslySetInnerHTML={{ __html: entry.currentDetails }}
                 />
               )}

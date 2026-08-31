@@ -21,10 +21,10 @@ export function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="rounded-md border border-border bg-surface p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent shadow-none group relative overflow-hidden flex flex-col sm:flex-row gap-6 items-start sm:items-center w-full"
+              className="rounded-md border border-border bg-surface p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand shadow-none group relative overflow-hidden flex flex-col sm:flex-row gap-6 items-start sm:items-center w-full"
             >
               {/* Visual graphic block */}
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded border border-border bg-background text-secondary group-hover:text-accent transition-colors duration-200">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded border border-border bg-background text-secondary group-hover:text-brand transition-colors duration-200">
                 <Code2 className="h-6 w-6" />
               </div>
 
@@ -35,13 +35,13 @@ export function Projects() {
                     {project.type}
                   </span>
                   {project.status && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent-subtle px-1.5 py-0.5 rounded">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle px-1.5 py-0.5 rounded">
                       {project.status}
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-lg font-bold text-foreground transition-colors duration-200 group-hover:text-accent">
+                <h3 className="text-lg font-bold text-foreground transition-colors duration-200 group-hover:text-brand">
                   {project.title}
                 </h3>
 
@@ -65,7 +65,7 @@ export function Projects() {
                 <div className="pt-2 flex flex-wrap gap-4 items-center">
                   <Link
                     href={`/projects/${project.id}`}
-                    className="inline-flex items-center text-xs font-semibold text-accent hover:text-accent-hover hover:underline transition-all duration-200 cursor-pointer"
+                    className="inline-flex items-center text-xs font-semibold text-brand hover:text-brand-hover hover:underline transition-all duration-200 cursor-pointer"
                   >
                     Read Case Study
                   </Link>
@@ -74,7 +74,7 @@ export function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary hover:text-accent transition-colors duration-200 cursor-pointer group/link"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary hover:text-brand transition-colors duration-200 cursor-pointer group/link"
                   >
                     View on GitHub
                     <ExternalLink className="h-3 w-3 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

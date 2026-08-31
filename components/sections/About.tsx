@@ -35,7 +35,7 @@ export function About() {
             </div>
             <div>
               <span className="text-xs font-semibold uppercase tracking-wider text-muted">Academic Standings</span>
-              <p className="text-sm font-bold text-accent mt-1">CGPA: 3.68 / 4.00</p>
+              <p className="text-sm font-bold text-brand mt-1">CGPA: 3.68 / 4.00</p>
             </div>
           </div>
         </div>

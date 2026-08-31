@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </Link>
 
       <div className="space-y-3">
-        <span className="inline-flex text-[10px] font-bold uppercase tracking-wider text-accent bg-accent-subtle px-1.5 py-0.5 rounded">
+        <span className="inline-flex text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle px-1.5 py-0.5 rounded">
           {project.type}
         </span>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors duration-200 cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded bg-brand text-white text-sm font-medium hover:bg-brand-hover transition-colors duration-200 cursor-pointer"
             >
               View Repository
               <ExternalLink className="h-4 w-4" />
