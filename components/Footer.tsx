@@ -49,7 +49,7 @@ function ArrowUpIcon({ className }: { className?: string }) {
 
 function GraduationCapIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
       <path d="M6 12v5c3 3 9 3 12 0v-5" />
     </svg>
@@ -58,7 +58,7 @@ function GraduationCapIcon({ className }: { className?: string }) {
 
 function MathIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M18 4H6l6 8-6 8h12" />
     </svg>
   );
@@ -78,10 +78,10 @@ export function Footer() {
   ];
 
   const connectLinks = [
-    { name: "Email Me", href: `mailto:${personalInfo.email}`, icon: MailIcon },
-    { name: "LinkedIn Profile", href: personalInfo.linkedin, icon: LinkedinIcon },
-    { name: "GitHub Workspace", href: personalInfo.github, icon: GithubIcon },
-    { name: "Phone / WhatsApp", href: "tel:+8801727183143", icon: PhoneIcon },
+    { name: "Email Me", detail: personalInfo.email, href: `mailto:${personalInfo.email}`, icon: MailIcon },
+    { name: "LinkedIn Profile", detail: "linkedin.com/in/saidul07", href: personalInfo.linkedin, icon: LinkedinIcon },
+    { name: "GitHub Workspace", detail: "github.com/saidul-07", href: personalInfo.github, icon: GithubIcon },
+    { name: "Phone / WhatsApp", detail: "+880 1727-183143", href: "tel:+8801727183143", icon: PhoneIcon },
   ];
 
   const scrollToTop = () => {
@@ -89,75 +89,76 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full border-t border-border bg-surface mt-auto relative">
-      {/* Top subtle brand accent border line */}
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-brand/30 to-transparent absolute top-0 left-0" />
+    <footer className="w-full bg-[#090d16] text-slate-100 border-t border-slate-800/80 mt-auto relative font-sans">
+      {/* Top Gradient Accent Line */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-brand via-blue-400 to-indigo-500 absolute top-0 left-0" />
 
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start">
-          {/* Left Column: Profile Info */}
+          {/* Left Column: Profile Info & Badges */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 rounded-full ring-2 ring-brand/20 overflow-hidden shrink-0 shadow-xs">
+              <div className="relative h-11 w-11 rounded-full ring-2 ring-brand/40 overflow-hidden shrink-0 shadow-md">
                 <Image
                   src="/profile.jpg"
                   alt="Md Sayedul Islam"
-                  width={40}
-                  height={40}
+                  width={44}
+                  height={44}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h3 className="text-base font-bold text-foreground leading-snug">
+                <h3 className="text-base sm:text-lg font-extrabold text-white leading-tight">
                   {personalInfo.name}
                 </h3>
-                <p className="text-[11px] font-semibold text-brand tracking-wide uppercase">
+                <p className="text-xs font-semibold text-brand tracking-wider uppercase mt-0.5">
                   B.Sc. CSE Student @ DUET
                 </p>
               </div>
             </div>
             
-            <p className="text-xs text-secondary leading-relaxed max-w-sm">
-              Computer Science &amp; Engineering student passionate about AI/ML, Computer Vision, and Software Engineering. Continuously learning and exploring real-world tech solutions.
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+              Computer Science &amp; Engineering student passionate about AI/ML, Computer Vision, and Software Engineering. Exploring real-world tech solutions and continuous learning.
             </p>
 
-            <div className="flex flex-wrap gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle border border-brand/20 px-2.5 py-1 rounded-full">
-                <GraduationCapIcon className="h-3 w-3 text-brand" />
+            <div className="flex flex-wrap gap-2.5 pt-2">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-brand bg-brand/10 border border-brand/30 px-3 py-1 rounded-full shadow-xs">
+                <GraduationCapIcon className="h-3.5 w-3.5 text-brand" />
                 DUET CSE (2023 - Present)
               </span>
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle border border-brand/20 px-2.5 py-1 rounded-full">
-                <MathIcon className="h-3 w-3 text-brand" />
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full shadow-xs">
+                <MathIcon className="h-3.5 w-3.5 text-emerald-400" />
                 DUET Math Club
               </span>
             </div>
           </div>
 
-          {/* Middle Column: Quick Views */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
+          {/* Middle Column: Quick Views Navigation */}
+          <div className="md:col-span-3 space-y-3.5">
+            <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-200 border-b border-slate-800/80 pb-2 inline-block">
               Quick Views
             </h4>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2.5 pt-1">
               {quickLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-xs sm:text-sm text-secondary hover:text-brand hover:translate-x-1 transition-all duration-200 w-fit"
+                  className="text-xs sm:text-sm font-medium text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 w-fit flex items-center gap-1.5"
                 >
+                  <span className="text-brand text-xs">&rsaquo;</span>
                   {link.name}
                 </a>
               ))}
             </nav>
           </div>
 
-          {/* Right Column: Connect */}
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
+          {/* Right Column: Connect Channels */}
+          <div className="md:col-span-4 space-y-3.5">
+            <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-200 border-b border-slate-800/80 pb-2 inline-block">
               Connect
             </h4>
-            <nav className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5 pt-1">
               {connectLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -166,36 +167,43 @@ export function Footer() {
                     href={link.href}
                     target={link.name !== "Email Me" && link.name !== "Phone / WhatsApp" ? "_blank" : undefined}
                     rel={link.name !== "Email Me" && link.name !== "Phone / WhatsApp" ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-2.5 text-xs sm:text-sm text-secondary hover:text-brand transition-colors duration-200 group w-fit p-1 rounded-md hover:bg-brand-subtle/50"
+                    className="flex items-center gap-3 p-2 rounded-lg bg-slate-900/90 border border-slate-800/80 hover:border-brand/50 hover:bg-slate-800/70 transition-all duration-200 group w-full"
                   >
-                    <div className="flex h-7 w-7 items-center justify-center rounded border border-border bg-background group-hover:border-brand group-hover:text-brand transition-colors">
-                      <Icon className="h-3.5 w-3.5" />
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-800 text-brand group-hover:bg-brand group-hover:text-white transition-colors">
+                      <Icon className="h-4 w-4" />
                     </div>
-                    <span className="font-medium">{link.name}</span>
+                    <div className="overflow-hidden">
+                      <h5 className="text-xs font-bold text-slate-200 group-hover:text-white transition-colors">
+                        {link.name}
+                      </h5>
+                      <p className="text-[11px] font-medium text-slate-400 truncate">
+                        {link.detail}
+                      </p>
+                    </div>
                   </a>
                 );
               })}
-            </nav>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-border bg-background/60">
+      {/* Bottom Status Bar */}
+      <div className="border-t border-slate-800/80 bg-[#060910]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-muted font-medium">
+          <p className="text-xs text-slate-400 font-medium">
             &copy; {currentYear} {personalInfo.name}. All rights reserved.
           </p>
           
           <div className="flex items-center gap-4">
-            <div className="inline-flex items-center gap-1.5 text-xs text-muted">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Open for Research &amp; Internship Opportunities</span>
+            <div className="inline-flex items-center gap-2 text-xs font-medium text-slate-400 bg-slate-900/80 border border-slate-800 px-3 py-1 rounded-full">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Open for Research &amp; Internships</span>
             </div>
             
             <button
               onClick={scrollToTop}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-background text-secondary hover:text-brand hover:border-brand hover:bg-brand-subtle transition-all duration-200 cursor-pointer shadow-none"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:border-brand hover:bg-brand transition-all duration-200 shadow-sm cursor-pointer"
               aria-label="Scroll to top"
               title="Scroll to top"
             >
