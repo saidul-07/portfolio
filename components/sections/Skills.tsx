@@ -2,7 +2,7 @@ import { skillCategories } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-10 md:py-16 border-b border-border scroll-mt-16">
+    <section id="skills" className="py-20 md:py-28 border-b border-border scroll-mt-16">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
         {/* Left Column */}
         <div className="md:col-span-4 space-y-4">

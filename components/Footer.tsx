@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { personalInfo } from "@/data/personal";
 
 function GithubIcon({ className }: { className?: string }) {
@@ -46,6 +47,23 @@ function ArrowUpIcon({ className }: { className?: string }) {
   );
 }
 
+function GraduationCapIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+    </svg>
+  );
+}
+
+function MathIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M18 4H6l6 8-6 8h12" />
+    </svg>
+  );
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -53,6 +71,7 @@ export function Footer() {
     { name: "Home", href: "#home" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Learning", href: "#learning" },
     { name: "Education", href: "#education" },
     { name: "Leadership", href: "#leadership" },
     { name: "Contact", href: "#contact" },
@@ -72,42 +91,57 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-border bg-surface mt-auto">
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start">
           {/* Left Column: Profile Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-brand text-white text-sm font-bold">
-                {"S"}
+              <div className="relative h-9 w-9 rounded-full border border-brand/20 overflow-hidden shrink-0 shadow-sm">
+                <Image
+                  src="/profile.jpg"
+                  alt="Md Sayedul Islam"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-base font-bold text-foreground">
-                {personalInfo.name}
-              </h3>
+              <div>
+                <h3 className="text-base font-bold text-foreground leading-snug">
+                  {personalInfo.name}
+                </h3>
+                <p className="text-[11px] font-semibold text-brand tracking-wide uppercase">
+                  B.Sc. CSE Student @ DUET
+                </p>
+              </div>
             </div>
+            
             <p className="text-xs text-secondary leading-relaxed max-w-sm">
-              {"CSE Student at DUET. Exploring AI, Computer Vision, Machine Learning, and Software Development. Always learning, always building."}
+              Computer Science &amp; Engineering student passionate about AI/ML, Computer Vision, and Software Engineering. Continuously learning and exploring real-world tech solutions.
             </p>
+
             <div className="flex flex-wrap gap-2 pt-1">
-              <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle px-2 py-0.5 rounded">
-                {"🎓 DUET CSE"}
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle border border-brand/20 px-2.5 py-1 rounded-full">
+                <GraduationCapIcon className="h-3 w-3 text-brand" />
+                DUET CSE (2023 - Present)
               </span>
-              <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle px-2 py-0.5 rounded">
-                {"📐 Math Club"}
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle border border-brand/20 px-2.5 py-1 rounded-full">
+                <MathIcon className="h-3 w-3 text-brand" />
+                DUET Math Club
               </span>
             </div>
           </div>
 
           {/* Middle Column: Quick Views */}
-          <div className="md:col-span-3 space-y-4">
+          <div className="md:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              {"Quick Views"}
+              Quick Views
             </h4>
             <nav className="flex flex-col gap-2">
               {quickLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm text-secondary hover:text-brand transition-colors duration-200"
+                  className="text-xs sm:text-sm text-secondary hover:text-brand hover:translate-x-1 transition-all duration-200 w-fit"
                 >
                   {link.name}
                 </a>
@@ -116,9 +150,9 @@ export function Footer() {
           </div>
 
           {/* Right Column: Connect */}
-          <div className="md:col-span-4 space-y-4">
+          <div className="md:col-span-4 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              {"Connect"}
+              Connect
             </h4>
             <nav className="flex flex-col gap-2.5">
               {connectLinks.map((link) => {
@@ -129,10 +163,12 @@ export function Footer() {
                     href={link.href}
                     target={link.name !== "Email Me" && link.name !== "Phone / WhatsApp" ? "_blank" : undefined}
                     rel={link.name !== "Email Me" && link.name !== "Phone / WhatsApp" ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-2 text-sm text-secondary hover:text-brand transition-colors duration-200"
+                    className="inline-flex items-center gap-2.5 text-xs sm:text-sm text-secondary hover:text-brand transition-colors duration-200 group w-fit"
                   >
-                    <Icon className="h-4 w-4" />
-                    {link.name}
+                    <div className="flex h-7 w-7 items-center justify-center rounded border border-border bg-background group-hover:border-brand group-hover:text-brand transition-colors">
+                      <Icon className="h-3.5 w-3.5" />
+                    </div>
+                    <span>{link.name}</span>
                   </a>
                 );
               })}
@@ -142,21 +178,25 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border">
+      <div className="border-t border-border bg-background/50">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-muted">
+          <p className="text-xs text-muted font-medium">
             &copy; {currentYear} {personalInfo.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-muted italic">
-              {"Crafted with passion for Software & AI"}
-            </span>
+          
+          <div className="flex items-center gap-4">
+            <div className="inline-flex items-center gap-1.5 text-xs text-muted">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Open for Research &amp; Internship Opportunities</span>
+            </div>
+            
             <button
               onClick={scrollToTop}
-              className="flex h-8 w-8 items-center justify-center rounded border border-border bg-background text-secondary hover:text-brand hover:border-brand transition-all duration-200 cursor-pointer"
+              className="flex h-8 w-8 items-center justify-center rounded border border-border bg-background text-secondary hover:text-brand hover:border-brand hover:bg-brand-subtle transition-all duration-200 cursor-pointer shadow-none"
               aria-label="Scroll to top"
+              title="Scroll to top"
             >
-              <ArrowUpIcon />
+              <ArrowUpIcon className="h-4 w-4" />
             </button>
           </div>
         </div>

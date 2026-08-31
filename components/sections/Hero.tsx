@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="py-10 md:py-14 border-b border-border scroll-mt-16 animate-fade-in-slide"
+      className="py-16 md:py-24 border-b border-border scroll-mt-16 animate-fade-in-slide"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left Column: Title, Intro, Tags, Metrics & Actions */}
