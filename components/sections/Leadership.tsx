@@ -29,7 +29,7 @@ export function Leadership() {
               className="border border-border/80 bg-surface p-6 rounded-xl shadow-2xs hover:shadow-md hover:border-brand/40 transition-all duration-200 space-y-3 flex flex-col justify-between"
             >
               <div className="space-y-3">
-                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
                   <div className="flex items-center gap-2">
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0" />
                     <h3 className="text-base font-bold text-foreground">
@@ -37,17 +37,19 @@ export function Leadership() {
                     </h3>
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle border border-brand/20 px-2.5 py-0.5 rounded-full">
-                    Executive Role
+                    {item.badge || "Executive Role"}
                   </span>
                 </div>
 
-                <p className="text-sm font-semibold text-brand">
+                <p className="text-sm font-extrabold text-brand">
                   {item.organization}
                 </p>
 
-                <p className="text-xs text-secondary leading-relaxed">
-                  Managing club activities, organizing mathematical problem-solving sessions, and assisting in campus workshop planning.
-                </p>
+                {item.description && (
+                  <p className="text-xs text-secondary leading-relaxed">
+                    {item.description}
+                  </p>
+                )}
               </div>
 
               <div className="flex items-center gap-1.5 text-xs text-secondary bg-background border border-border/80 px-3 py-1.5 rounded-lg w-fit pt-2">
