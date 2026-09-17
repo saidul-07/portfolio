@@ -15,8 +15,10 @@ export function Skills() {
         </div>
 
         {/* 2-Column Main Layout (Left Cards + Right Sidebar Widget) */}
+        {/* Main Section Grid (Left Category Cards + Right Sidebar Widget) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Left Column: Stacked Category Cards */}
+          {/* Main Left Column: 2-Column Category Cards Grid */}
           <div className="lg:col-span-8 space-y-5">
             {skillCategories.map((category) => (
               <div
@@ -30,6 +32,20 @@ export function Skills() {
                     {category.title}
                   </h3>
                 </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {skillCategories.map((category) => (
+                <div
+                  key={category.id}
+                  className="rounded-2xl border border-border/80 bg-surface p-5 sm:p-6 shadow-2xs hover:border-brand/40 transition-all duration-200 space-y-4 flex flex-col justify-between"
+                >
+                  <div className="space-y-3">
+                    {/* Category Card Header */}
+                    <div className="flex items-center gap-2.5 border-b border-border/60 pb-3">
+                      <span className="text-lg">{category.icon}</span>
+                      <h3 className="font-extrabold text-sm sm:text-base text-foreground tracking-tight">
+                        {category.title}
+                      </h3>
+                    </div>
 
                 {/* Skill Pill Badges */}
                 <div className="flex flex-wrap gap-2 pt-1">
@@ -41,13 +57,29 @@ export function Skills() {
                       {skill}
                     </span>
                   ))}
+                    {/* Skill Pill Badges */}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {category.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3.5 py-1.5 text-xs font-semibold text-foreground bg-background border border-border/80 rounded-xl hover:border-brand/40 hover:text-brand transition-colors shadow-2xs"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+              ))}
+            </div>
 
             {/* Currently Exploring Card */}
+            {/* Currently Exploring Card (Full Width in Main Column) */}
             <div className="rounded-2xl border border-brand/30 bg-brand-subtle/30 p-5 sm:p-6 shadow-2xs space-y-4">
               <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 border-b border-brand/20 pb-3">
                 <span className="text-lg">🚀</span>
                 <h3 className="font-extrabold text-sm sm:text-base text-brand tracking-tight">
                   Currently Exploring
