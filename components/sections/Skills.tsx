@@ -16,6 +16,28 @@ export function Skills() {
 
         {/* Single-Column Full-Width Stacked Category Cards */}
         <div className="space-y-5">
+          {/* Currently Exploring Card (Show First) */}
+          <div className="rounded-2xl border border-brand/30 bg-brand-subtle/30 p-5 sm:p-6 shadow-2xs space-y-4">
+            <div className="flex items-center gap-2.5 border-b border-brand/20 pb-3">
+              <span className="text-lg">🚀</span>
+              <h3 className="font-extrabold text-sm sm:text-base text-brand tracking-tight">
+                Currently Exploring
+              </h3>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-1">
+              {currentlyExploring.map((item) => (
+                <span
+                  key={item}
+                  className="px-3.5 py-1.5 text-xs font-bold text-brand bg-brand-subtle border border-brand/30 rounded-xl shadow-2xs"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Skill Category Cards */}
           {skillCategories.map((category) => (
             <div
               key={category.id}
@@ -42,27 +64,6 @@ export function Skills() {
               </div>
             </div>
           ))}
-
-          {/* Currently Exploring Card (Full Width at Bottom) */}
-          <div className="rounded-2xl border border-brand/30 bg-brand-subtle/30 p-5 sm:p-6 shadow-2xs space-y-4">
-            <div className="flex items-center gap-2.5 border-b border-brand/20 pb-3">
-              <span className="text-lg">🚀</span>
-              <h3 className="font-extrabold text-sm sm:text-base text-brand tracking-tight">
-                Currently Exploring
-              </h3>
-            </div>
-
-            <div className="flex flex-wrap gap-2 pt-1">
-              {currentlyExploring.map((item) => (
-                <span
-                  key={item}
-                  className="px-3.5 py-1.5 text-xs font-bold text-brand bg-brand-subtle border border-brand/30 rounded-xl shadow-2xs"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
