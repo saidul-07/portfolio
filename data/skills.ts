@@ -22,6 +22,7 @@ export const skillCategories: SkillCategory[] = [
       "PyTorch",
       "TensorFlow / Keras",
       "OpenCV"
+      "PyTorch / TensorFlow"
     ]
   },
   {
@@ -33,6 +34,7 @@ export const skillCategories: SkillCategory[] = [
       "Android Dev (Java)",
       "REST APIs",
       "UI/UX Basics",
+      "UI/UX Design",
       "Mobile Applications",
       "Edge Computing Concepts",
       "Smart Tech Solutions"
@@ -46,6 +48,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "C",
       "C++",
+      "C / C++",
       "Python",
       "Java",
       "JavaScript",
@@ -63,6 +66,7 @@ export const skillCategories: SkillCategory[] = [
       "SQLite",
       "Relational Modeling",
       "Data Analysis Basics"
+      "Data Analytics"
     ]
   },
   {
@@ -75,6 +79,7 @@ export const skillCategories: SkillCategory[] = [
       "VS Code",
       "Linux Basics",
       "Jupyter Notebook",
+      "VS Code & Linux",
       "Data Structures",
       "Algorithms",
       "Problem Solving"
@@ -88,4 +93,8 @@ export const currentlyExploring = [
   "Multimodal Medical Diagnostics",
   "XAI Interpretability & Trustable AI",
   "Edge AI Model Optimization"
+  "LLM Fine-tuning",
+  "Multimodal Diagnostics",
+  "XAI Interpretability",
+  "Edge AI Optimization"
 ];

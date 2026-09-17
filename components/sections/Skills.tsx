@@ -17,6 +17,7 @@ export function Skills() {
         {/* Single-Column Full-Width Stacked Category Cards */}
         <div className="space-y-5">
           {/* Currently Exploring Card (Show First) */}
+          {/* Currently Exploring Card (Show First - 5 Pills in Single Row) */}
           <div className="rounded-2xl border border-brand/30 bg-brand-subtle/30 p-5 sm:p-6 shadow-2xs space-y-4">
             <div className="flex items-center gap-2.5 border-b border-brand/20 pb-3">
               <span className="text-lg">🚀</span>
@@ -26,10 +27,13 @@ export function Skills() {
             </div>
 
             <div className="flex flex-wrap gap-2 pt-1">
+            {/* 5 Skills in Single Row Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 pt-1">
               {currentlyExploring.map((item) => (
                 <span
                   key={item}
                   className="px-3.5 py-1.5 text-xs font-bold text-brand bg-brand-subtle border border-brand/30 rounded-xl shadow-2xs"
+                  className="px-3 py-2 text-xs font-bold text-brand bg-brand-subtle border border-brand/30 rounded-xl text-center flex items-center justify-center shadow-2xs"
                 >
                   {item}
                 </span>
@@ -38,6 +42,7 @@ export function Skills() {
           </div>
 
           {/* Skill Category Cards */}
+          {/* Skill Category Cards (5 Skills in Single Row) */}
           {skillCategories.map((category) => (
             <div
               key={category.id}
@@ -53,10 +58,13 @@ export function Skills() {
 
               {/* Skill Pill Badges */}
               <div className="flex flex-wrap gap-2 pt-1">
+              {/* 5 Skill Pill Badges in Single Row */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 pt-1">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
                     className="px-3.5 py-1.5 text-xs font-semibold text-foreground bg-background border border-border/80 rounded-xl hover:border-brand/40 hover:text-brand transition-colors shadow-2xs"
+                    className="px-3 py-2 text-xs font-semibold text-foreground bg-background border border-border/80 rounded-xl text-center flex items-center justify-center hover:border-brand/40 hover:text-brand transition-colors shadow-2xs"
                   >
                     {skill}
                   </span>
