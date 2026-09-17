@@ -1,38 +1,91 @@
 export interface SkillCategory {
   id: string;
+  icon: string;
   title: string;
+  shortTitle: string;
   skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: "programming",
-    title: "Programming Languages",
-    skills: ["C", "C++", "Python", "Java", "JavaScript"]
-  },
-  {
     id: "ai-ml",
-    title: "AI & Machine Learning",
-    skills: ["Machine Learning", "Deep Learning", "Computer Vision", "Object Detection", "Model Training"]
-  },
-  {
-    id: "databases",
-    title: "Databases",
-    skills: ["SQL", "MySQL", "SQLite", "Relational Modeling"]
+    icon: "🧠",
+    title: "AI & Deep Learning",
+    shortTitle: "AI & ML",
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "Explainable AI (XAI)",
+      "Computer Vision",
+      "Object Detection",
+      "Model Training",
+      "PyTorch",
+      "TensorFlow / Keras",
+      "OpenCV"
+    ]
   },
   {
     id: "software-dev",
-    title: "Software & Mobile Dev",
-    skills: ["Android Dev (Java)", "REST APIs", "UI/UX Basics", "Mobile Apps"]
+    icon: "🦾",
+    title: "Software & Mobile Development",
+    shortTitle: "Software & Mobile",
+    skills: [
+      "Android Dev (Java)",
+      "REST APIs",
+      "UI/UX Basics",
+      "Mobile Applications",
+      "Edge Computing Concepts",
+      "Smart Tech Solutions"
+    ]
+  },
+  {
+    id: "programming",
+    icon: "💻",
+    title: "Programming & Core Engineering",
+    shortTitle: "Programming",
+    skills: [
+      "C",
+      "C++",
+      "Python",
+      "Java",
+      "JavaScript",
+      "OOP & Software Design"
+    ]
+  },
+  {
+    id: "databases",
+    icon: "📊",
+    title: "Databases & Data Analytics",
+    shortTitle: "Data & DB",
+    skills: [
+      "SQL",
+      "MySQL",
+      "SQLite",
+      "Relational Modeling",
+      "Data Analysis Basics"
+    ]
   },
   {
     id: "dev-tools",
-    title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "VS Code", "Linux Basics", "Jupyter Notebooks"]
-  },
-  {
-    id: "cs-core",
-    title: "CS Core & Fundamentals",
-    skills: ["Data Structures", "Algorithms", "OOP", "Problem Solving"]
+    icon: "🛠️",
+    title: "Development Tools & CS Core",
+    shortTitle: "Tools & Core",
+    skills: [
+      "Git / GitHub",
+      "VS Code",
+      "Linux Basics",
+      "Jupyter Notebook",
+      "Data Structures",
+      "Algorithms",
+      "Problem Solving"
+    ]
   }
+];
+
+export const currentlyExploring = [
+  "Vision Transformers (ViT)",
+  "LLM Fine-tuning & Alignment",
+  "Multimodal Medical Diagnostics",
+  "XAI Interpretability & Trustable AI",
+  "Edge AI Model Optimization"
 ];
