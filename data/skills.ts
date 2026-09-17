@@ -17,11 +17,6 @@ export const skillCategories: SkillCategory[] = [
       "Deep Learning",
       "Explainable AI (XAI)",
       "Computer Vision",
-      "Object Detection",
-      "Model Training",
-      "PyTorch",
-      "TensorFlow / Keras",
-      "OpenCV"
       "PyTorch / TensorFlow"
     ]
   },
@@ -33,26 +28,25 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Android Dev (Java)",
       "REST APIs",
-      "UI/UX Basics",
       "UI/UX Design",
       "Mobile Applications",
-      "Edge Computing Concepts",
       "Smart Tech Solutions"
     ]
   },
   {
     id: "programming",
     icon: "💻",
-    title: "Programming & Core Engineering",
-    shortTitle: "Programming",
+    title: "Programming & Web Development",
+    shortTitle: "Programming & Web",
     skills: [
-      "C",
-      "C++",
-      "C / C++",
       "Python",
-      "Java",
+      "C / C++",
       "JavaScript",
-      "OOP & Software Design"
+      "Django",
+      "Flask / FastAPI",
+      "HTML5 / CSS3",
+      "PHP",
+      "REST APIs"
     ]
   },
   {
@@ -65,7 +59,6 @@ export const skillCategories: SkillCategory[] = [
       "MySQL",
       "SQLite",
       "Relational Modeling",
-      "Data Analysis Basics"
       "Data Analytics"
     ]
   },
@@ -76,9 +69,6 @@ export const skillCategories: SkillCategory[] = [
     shortTitle: "Tools & Core",
     skills: [
       "Git / GitHub",
-      "VS Code",
-      "Linux Basics",
-      "Jupyter Notebook",
       "VS Code & Linux",
       "Data Structures",
       "Algorithms",
@@ -89,10 +79,6 @@ export const skillCategories: SkillCategory[] = [
 
 export const currentlyExploring = [
   "Vision Transformers (ViT)",
-  "LLM Fine-tuning & Alignment",
-  "Multimodal Medical Diagnostics",
-  "XAI Interpretability & Trustable AI",
-  "Edge AI Model Optimization"
   "LLM Fine-tuning",
   "Multimodal Diagnostics",
   "XAI Interpretability",
