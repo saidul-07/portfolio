@@ -21,7 +21,7 @@ export const educationList: EducationEntry[] = [
     fieldOfStudy: "Computer Science & Engineering",
     period: "2023 – Present",
     expectedGraduation: "Expected 2027",
-    grade: "3.68 / 4.00",
+    grade: "3.62 / 4.00",
     location: "Gazipur, Bangladesh",
     status: "Currently Studying",
     currentDetails: "3rd Year • 2nd Semester",
@@ -38,17 +38,6 @@ export const educationList: EducationEntry[] = [
     location: "Dhaka, Bangladesh",
     status: "Completed",
     coursework: ["Object-Oriented Programming", "Database Management", "Computer Networks", "Web Development", "Microprocessors"],
-    featured: false
-  },
-  {
-    id: "nagerpara",
-    institution: "Nagerpara High School",
-    degree: "Secondary School Certificate (SSC)",
-    fieldOfStudy: "Science",
-    period: "2017",
-    grade: "5.00 / 5.00 (Perfect GPA)",
-    location: "Shariatpur, Bangladesh",
-    status: "Completed",
     featured: false
   }
 ];

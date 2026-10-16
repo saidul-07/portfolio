@@ -45,11 +45,11 @@ export const learningAreas: LearningArea[] = [
 export const learningList: LearningEntry[] = [
   {
     id: "rice-detection",
-    title: "Rice Panicle Detection & Rice Growth-Stage Recognition",
-    role: "Researcher",
-    supervisor: "Umme Fawzia",
-    description: "An ongoing learning and research activity investigating agricultural computer vision, focusing on object detection and classification in real-world scenarios.",
+    title: "Rice Panicle Detection and Growth-Stage Recognition",
+    role: "Undergraduate Researcher",
+    supervisor: "Assistant Professor Umme Fawzia Rahim, Department of CSE, DUET",
+    description: "Ongoing research investigating agricultural computer vision for rice panicle detection and growth-stage recognition across booting, heading, and maturity stages. Developing a custom dataset of 4,500 images (1,500 images per stage), with image annotation currently in progress using CVAT. Geared toward practical object detection and deep learning deployment on resource-constrained devices using efficient AI models.",
     status: "Ongoing",
-    topics: ["Computer Vision", "Object Detection", "Deep Learning", "Lightweight AI", "Mobile AI"]
+    topics: ["Computer Vision", "Object Detection", "Deep Learning", "Efficient AI", "Resource-Constrained Devices"]
   }
 ];

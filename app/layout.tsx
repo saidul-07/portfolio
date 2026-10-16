@@ -16,8 +16,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md Sayedul Islam | CSE Student",
-  description: "Personal portfolio of Md Sayedul Islam, a Computer Science and Engineering student at DUET exploring AI, Machine Learning, Computer Vision, and software development.",
+  metadataBase: new URL("https://www.sayedul.me"),
+  title: {
+    default: "Md Sayedul Islam | Computer Vision & Efficient AI Researcher in Training",
+    template: "%s | Md Sayedul Islam",
+  },
+  description:
+    "Personal portfolio of Md Sayedul Islam, an undergraduate Computer Science & Engineering student at DUET researching Computer Vision, Deep Learning, and Efficient AI for resource-constrained devices.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Md Sayedul Islam | Computer Vision & Efficient AI Researcher in Training",
+    description:
+      "Undergraduate Computer Science & Engineering student at DUET researching Computer Vision, Deep Learning, and Efficient AI for resource-constrained devices.",
+    url: "https://www.sayedul.me",
+    siteName: "Md Sayedul Islam Portfolio",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "Md Sayedul Islam - DUET Computer Vision Researcher",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Md Sayedul Islam | Computer Vision & Efficient AI Researcher in Training",
+    description:
+      "Undergraduate Computer Science & Engineering student at DUET researching Computer Vision, Deep Learning, and Efficient AI for resource-constrained devices.",
+    images: ["/profile.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

@@ -258,61 +258,69 @@ export function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Name field */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-secondary">
+                  <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider text-secondary">
                     Your Name *
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
                     required
                     placeholder="e.g. John Doe"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full h-10 px-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand transition-colors text-foreground"
+                    className="w-full h-10 px-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30 transition-colors text-foreground"
                   />
                 </div>
 
                 {/* Email field */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-secondary">
+                  <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider text-secondary">
                     Your Email *
                   </label>
                   <input
+                    id="contact-email"
+                    name="email"
                     type="email"
                     required
                     placeholder="e.g. john@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-10 px-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand transition-colors text-foreground"
+                    className="w-full h-10 px-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30 transition-colors text-foreground"
                   />
                 </div>
               </div>
 
               {/* Subject field */}
               <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-secondary">
+                <label htmlFor="contact-subject" className="text-xs font-bold uppercase tracking-wider text-secondary">
                   Subject
                 </label>
                 <input
+                  id="contact-subject"
+                  name="subject"
                   type="text"
                   placeholder="e.g. Project Inquiry / Academic Collaboration"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  className="w-full h-10 px-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand transition-colors text-foreground"
+                  className="w-full h-10 px-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30 transition-colors text-foreground"
                 />
               </div>
 
               {/* Message field */}
               <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-secondary">
+                <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider text-secondary">
                   Message *
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   required
                   rows={4}
                   placeholder="Hi Md Sayedul Islam, I would like to connect regarding..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full p-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand transition-colors text-foreground resize-none"
+                  className="w-full p-3 text-sm bg-background border border-border rounded focus:outline-none focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30 transition-colors text-foreground resize-none"
                 />
               </div>
 

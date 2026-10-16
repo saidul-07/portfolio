@@ -11,13 +11,13 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Learning", href: "#learning" },
-    { name: "Education", href: "#education" },
-    { name: "Leadership", href: "#leadership" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Research", href: "/#research" },
+    { name: "Education", href: "/#education" },
+    { name: "Leadership", href: "/#leadership" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -35,6 +35,7 @@ export function Navbar() {
               width={36}
               height={36}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
           <div className="flex flex-col">
@@ -51,18 +52,18 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Menu Navigation */}
-        <nav className="hidden md:flex items-center gap-1.5 sm:gap-2">
+        <nav className="hidden md:flex items-center gap-1 md:gap-1.5 lg:gap-2">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-bold text-secondary hover:text-brand hover:bg-brand-subtle px-3 py-1.5 rounded-full transition-all duration-200"
+              className="text-xs lg:text-sm font-bold text-secondary hover:text-brand hover:bg-brand-subtle px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full transition-all duration-200"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
           
-          <div className="ml-2 pl-2 border-l border-border">
+          <div className="ml-1.5 md:ml-2 pl-1.5 md:pl-2 border-l border-border">
             <ThemeToggle />
           </div>
         </nav>
@@ -74,6 +75,7 @@ export function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface text-foreground hover:bg-background transition-colors cursor-pointer"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -84,14 +86,14 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-md px-4 py-4 space-y-2 animate-fade-in">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
               className="block text-base font-bold text-secondary hover:text-brand hover:bg-brand-subtle px-3 py-2 rounded-md transition-colors"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}

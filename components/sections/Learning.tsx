@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { learningAreas, learningList } from "@/data/learning";
 
 function BookIcon({ className }: { className?: string }) {
@@ -22,21 +23,21 @@ function BookIcon({ className }: { className?: string }) {
 
 export function Learning() {
   return (
-    <section id="learning" className="py-8 md:py-12 border-b border-border scroll-mt-16 animate-fade-in">
+    <section id="research" className="py-8 md:py-12 border-b border-border scroll-mt-16 animate-fade-in">
       <div className="space-y-8">
         {/* Section Header */}
         <div className="space-y-3 max-w-3xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-brand/20 bg-brand-subtle text-xs font-bold text-brand">
             <BookIcon className="h-3.5 w-3.5" />
-            Ongoing Research &amp; Self-Study
+            Ongoing Research &amp; Academic Inquiry
           </div>
           
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-            Learning &amp; Exploration
+            Research
           </h2>
           
           <p className="text-secondary text-xs sm:text-sm leading-relaxed">
-            Exploring core CS concepts, studying technical research papers, and building practical understanding through projects, continuous practice, and academic experimentation.
+            Ongoing research investigations, research interests, and academic inquiry in computer vision, deep learning, and efficient AI systems.
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export function Learning() {
         {/* Ongoing Exploration Activity Card */}
         <div className="space-y-4 pt-4">
           <h3 className="text-xs font-extrabold uppercase tracking-widest text-foreground border-b border-border/60 pb-2">
-            Ongoing Research &amp; Activity
+            Ongoing Research Project
           </h3>
           <div className="space-y-5">
             {learningList.map((item) => (
@@ -86,7 +87,7 @@ export function Learning() {
                     </h4>
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-subtle border border-brand/20 px-2.5 py-0.5 rounded-full">
-                    {item.status} Activity
+                    {item.status} Research
                   </span>
                 </div>
 
@@ -116,6 +117,17 @@ export function Learning() {
                       {topic}
                     </span>
                   ))}
+                </div>
+
+                <div className="pt-2 border-t border-border/50 flex items-center justify-between">
+                  <Link
+                    href={`/research/${item.id === "rice-detection" ? "rice-panicle-detection" : item.id}`}
+                    aria-label={`Read full research case study for ${item.title}`}
+                    className="inline-flex items-center text-xs font-bold text-brand hover:text-brand-hover hover:underline transition-all duration-200 cursor-pointer gap-1.5"
+                  >
+                    Read Full Research Case Study
+                    <span aria-hidden="true">&rarr;</span>
+                  </Link>
                 </div>
               </div>
             ))}

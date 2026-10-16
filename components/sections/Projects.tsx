@@ -79,35 +79,43 @@ export function Projects() {
                 </p>
 
                 {/* Tech Pills */}
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 text-xs font-semibold text-brand bg-brand-subtle/80 border border-brand/20 rounded-lg shadow-2xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                {project.technologies.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 text-xs font-semibold text-brand bg-brand-subtle/80 border border-brand/20 rounded-lg shadow-2xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Actions */}
                 <div className="pt-2 flex flex-wrap gap-4 items-center">
                   <Link
                     href={`/projects/${project.id}`}
+                    aria-label={`Read case study for ${project.title}`}
                     className="inline-flex items-center text-xs font-bold text-brand hover:text-brand-hover hover:underline transition-all duration-200 cursor-pointer"
                   >
                     Read Case Study
                   </Link>
-                  <span className="text-border text-xs hidden sm:inline">|</span>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary hover:text-brand transition-colors duration-200 cursor-pointer group/link"
-                  >
-                    View on GitHub
-                    <ExternalLink className="h-3 w-3 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </a>
+                  {project.githubUrl && (
+                    <>
+                      <span className="text-border text-xs hidden sm:inline">|</span>
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} on GitHub`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary hover:text-brand transition-colors duration-200 cursor-pointer group/link"
+                      >
+                        View on GitHub
+                        <ExternalLink className="h-3 w-3 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
